@@ -175,4 +175,72 @@ green = int(input())
 blue = int(input())
 
 print(red + blue + 1)
+#В ожидании доставки
+n = int(input())
+m = int(input())
+t = int(input())
 
+total_minutes = n * 60 + m + t
+hours = (total_minutes // 60) % 24
+minutes = total_minutes % 60
+
+print(f"{hours:02d}:{minutes:02d}")
+#Доставка
+a = int(input())
+b = int(input())
+c = int(input())
+
+distance = abs(b - a)
+time = distance / c
+
+print(f"{time:.2f}")
+#Ошибка кассового аппарата
+total = int(input())
+binary = input()
+
+last_purchase = int(binary, 2)
+result = total + last_purchase
+
+print(result)
+#Сдача 10
+price_bin = input()
+cash = int(input())
+
+price_dec = int(price_bin, 2)
+change = cash - price_dec
+
+print(change)
+#Украшение чека
+product = input()
+price = int(input())
+weight = int(input())
+money = int(input())
+
+total = price * weight
+change = money - total
+
+print("================Чек================")
+print(f"Товар:{product:>29}")
+print(f"Цена:{weight:>19}кг * {price}руб/кг")
+print(f"Итого:{total:>26}руб")
+print(f"Внесено:{money:>25}руб")
+print(f"Сдача:{change:>26}руб")
+print("===================================")
+#Мухи отдельно, котлеты отдельно
+n = int(input())
+m = int(input())
+k1 = int(input())
+k2 = int(input())
+
+# n = x + y
+# m = (k1*x + k2*y) / n
+# m*n = k1*x + k2*(n - x)
+# m*n = k1*x + k2*n - k2*x
+# m*n - k2*n = (k1 - k2)*x
+# n*(m - k2) = (k1 - k2)*x
+# x = n*(m - k2) / (k1 - k2)
+
+x = n * (m - k2) // (k1 - k2)
+y = n - x
+
+print(f"{x} {y}")
